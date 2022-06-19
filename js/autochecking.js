@@ -46,17 +46,61 @@
 // makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4)
 
 
-function calculateTotal(number) {
-    // написати функцію
-    // функція приймає цілі числа
-    // повернути суму чисел від 1 до намбер
-    if (Number.isInteger(number)) {
-        let sum = 0;
-        for (let i = 1; i <= number; i++) {
-            sum += i;
-            // return sum;
-            console.log(sum);
-        }
-    } 
+// function calculateTotal(number) {
+//     // написати функцію
+//     // функція приймає цілі числа
+//     // повернути суму чисел від 1 до намбер
+//     if (Number.isInteger(number)) {
+//         let sum = 0;
+//         for (let i = 1; i <= number; i++) {
+//             sum += i;
+//             // return sum;
+//             console.log(sum);
+//         }
+//     }
+// }
+// calculateTotal(3);
+
+
+
+// function calculateTotal(number) {
+//     // Change code below this line
+//     const min = 1;
+//    let total = 0;
+//    for (let i = min; i <= number; i += 1) {
+//        total += i;
+// //    return total;
+//     }
+//     console.log('total: ', total);
+//      // Change code above this line
+// }
+// calculateTotal(3);
+// calculateTotal(7);
+
+
+function calculateTotalPrice(order) {
+   
+    let total = 0;
+    // Change code below this line
+ 
+    for (const sum of order) {
+        total += sum;
+    }
+    
+    // Change code above this line
+    // return total;
+    console.log('total: ', total);
 }
-calculateTotal(3);
+calculateTotalPrice([12, 85, 37, 4]);
+
+// const clients = ["Mango", "Ajax", "Poly"];
+
+// for (const client of clients) {
+//   console.log(client);
+// }
+
+// const string = "javascript";
+
+// for (const character of string) {
+//   console.log(character);
+// }
