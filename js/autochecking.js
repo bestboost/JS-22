@@ -147,7 +147,70 @@
 // countTotalSalary({ mango: 100, poly: 150, alfred: 80 });
 
 
+// 1. Напишсать функцию getProductPrice(productName)
+// 2. принимает один параметр productName - название продукта
+// 3. Функция ищет объект продукта с таким именем(свойство name)
+//  в массиве products
+// 4. возвращает его цену(свойство price)
+// 5. Если продукт с таким названием не найден,
+//     функция должна возвращать null.
+
+// const products = [
+//     { name: "Radar", price: 1300, quantity: 4 },
+//     { name: "Scanner", price: 2700, quantity: 3 },
+//     { name: "Droid", price: 400, quantity: 7 },
+//     { name: "Grip", price: 1200, quantity: 9 },
+    
+//   ];
+  
+//   function getProductPrice(productName) {
+//     // Change code below this line
+        
+//       for (const product of products) {
+         
+      
+//           if (productName === product.name) {
+//               console.log(product.price);
+//           }
+  
+//       }
+  
+//     // Change code above this line
+//     console.log(null);
+//   }
+
+// getProductPrice("Radar");
+// getProductPrice("Grip")
+// getProductPrice("Engine");
 
 
 
+// const forecast = {
+//     today: {
+//       low: 28,
+//       high: 32,
+//       icon: "https://www.flaticon.com/svg/static/icons/svg/861/861059.svg",
+//     },
+//     tomorrow: {
+//       low: 27,
+//       high: 31,
+//     },
+//   };
+//   // Change code below this line
+  
+// const { today: { high: highToday, low: lowToday, icon: todayIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg" },
+//     tomorrow: { high: highTomorrow, low: lowTomorrow, icon: tomorrowIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg" },
+// } = forecast;
 
+
+function makeTask(data) {
+    const completed = false;
+    const category = "General";
+    const priority = "Normal";
+    // Change code below this line
+ 
+  console.log(data);
+    // Change code above this line
+}
+makeTask({ category: "Homemade", priority: "Low", text: "Take out the trash" });
+  
