@@ -78,20 +78,20 @@
 // calculateTotal(7);
 
 
-function calculateTotalPrice(order) {
+// function calculateTotalPrice(order) {
    
-    let total = 0;
-    // Change code below this line
+//     let total = 0;
+//     // Change code below this line
  
-    for (const sum of order) {
-        total += sum;
-    }
+//     for (const sum of order) {
+//         total += sum;
+//     }
     
-    // Change code above this line
-    // return total;
-    console.log('total: ', total);
-}
-calculateTotalPrice([12, 85, 37, 4]);
+//     // Change code above this line
+//     // return total;
+//     console.log('total: ', total);
+// }
+// calculateTotalPrice([12, 85, 37, 4]);
 
 // const clients = ["Mango", "Ajax", "Poly"];
 
@@ -104,3 +104,50 @@ calculateTotalPrice([12, 85, 37, 4]);
 // for (const character of string) {
 //   console.log(character);
 // }
+
+
+// function countProps(object) {
+//     // Change code below this line
+//     let propCount = 0;
+//     const key = Object.keys(object);
+   
+//       if (object.hasOwnProperty(key)) {
+//         propCount += 1;
+//       }
+    
+//       // return propCount;
+    
+//     console.log(propCount);
+//     // Change code above this line
+// }
+//  countProps({ mail: "poly@mail.com", isOnline: true, score: 500 })
+
+
+
+// // 1. Напиши функцию countTotalSalary(salaries)
+// //  которая принимает объект зарплат,
+
+
+// //  2. переменную totalSalary использовать для хранения общей суммы зарплаты.
+
+
+// function countTotalSalary(salaries) {
+//     let totalSalary = 0;
+
+// // 3.  рассчитать общую  сумму зарплат сотрудников
+//     const values = Object.values(salaries);
+//     for (const value of values) {
+//         totalSalary += value;
+//       }
+// //  4. и вернуть общую  сумму зарплат сотрудников
+//     console.log(totalSalary);
+// }
+// //    имя свойства это имя сотрудника,
+// //     а значение свойства это зарплата
+// countTotalSalary({ mango: 100, poly: 150, alfred: 80 });
+
+
+
+
+
+
