@@ -203,14 +203,47 @@
 // } = forecast;
 
 
-function makeTask(data) {
-    const completed = false;
-    const category = "General";
-    const priority = "Normal";
-    // Change code below this line
+
+// function makeTask(data) {
+//     const completed = false;
+//     const category = "General";
+//     const priority = "Normal";
+//     // Change code below this line
+//   let newObject = {completed, category, priority, ...data};
  
-  console.log(data);
-    // Change code above this line
+//   console.log(newObject);
+//     // Change code above this line
+// }
+// makeTask({
+//   category: "Homemade", priority: "Low",
+//   text: "Take out the trash"
+// });
+
+
+
+// function addOverNum(...args) {
+//   let total = 0;
+//   let firstNumber = args[0];
+
+//   for (const arg of args) {
+//     if (firstNumber < arg) {
+//       total += arg;
+//     }
+//   }
+//   console.log(firstNumber);
+//   console.log(total);
+//   // return total;
+//   // Change code above this line
+// }
+// addOverNum(50, 15, 27);
+// addOverNum(10, 12, 4, 11, 48, 10, 8);
+
+
+function findMatches() {
+  const matches = []; // Don't change this line
+
+  // Change code above this line
+  return matches;
 }
-makeTask({ category: "Homemade", priority: "Low", text: "Take out the trash" });
-  
+
+findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7);
