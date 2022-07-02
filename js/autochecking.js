@@ -364,11 +364,14 @@
 function changeEven(numbers, value) {
   // Change code below this line
   const newArray = [];
-  numbers.forEach(numbers => {
-    if (numbers % 2 === 0) {
-      newArray.push(numbers + value);
+  numbers.forEach(number => {
+    if (number % 2 === 0) {
+      newArray.push(number + value);
+    } else {
+      newArray.push(number);
     }
   });
+  
   console.log(newArray);
   //  return newArray;
   // Change code above this line
