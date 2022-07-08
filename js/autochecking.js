@@ -409,7 +409,7 @@
 
 
 // class StringBuilder {
-    
+
 //   constructor(value) {
 //       this.value = value;
 //   }
@@ -417,19 +417,17 @@
 //   getValue () {
 //       return this.value;
 //   }
+
+//   padStart(str) {
+//     this.value = str + this.value;
+//     }
   
-  
-//   padStart(initialValue) {
-//     console.log(this.value.length);
-//     console.log(this.value.padStart(1, initialValue));
+//   padEnd(str) {
+//     this.value += str;
 //   }
 
-//   padEnd(initialValue) {
-//     console.log(this.value.padEnd(this.valuelength, initialValue));
-//     }
-
-//    padBoth(initialValue) {
-
+//    padBoth(str) {
+//     this.value = str += this.value += str;
 //   }
 // }
 // // Change code above this line
@@ -443,77 +441,94 @@
 // console.log(builder.getValue()); // "=^.^="
 
 
-const getTotalBalanceByGender = (users, gender) => {users  
-  .map(user => user.gender)
-  .filter(user => user.gender === gender)
-  .reduce((total, user) => {
-    return total + user.balance;
-  }, 0)
-  console.log(this.balance);
-};
-  
-getTotalBalanceByGender ([
-  {
-    name: "Moore Hensley",
-    email: "moorehensley@indexia.com",
-    eyeColor: "blue",
-    friends: ["Sharron Pace"],
-    isActive: false,
-    balance: 2811,
-    gender: "male"
-  },
-  {
-    name: "Sharlene Bush",
-    email: "sharlenebush@tubesys.com",
-    eyeColor: "blue",
-    friends: ["Briana Decker", "Sharron Pace"],
-    isActive: true,
-    balance: 3821,
-    gender: "female"
-  },
-  {
-    name: "Ross Vazquez",
-    email: "rossvazquez@xinware.com",
-    eyeColor: "green",
-    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
-    isActive: false,
-    balance: 3793,
-    gender: "male"
-  },
-  {
-    name: "Elma Head",
-    email: "elmahead@omatom.com",
-    eyeColor: "green",
-    friends: ["Goldie Gentry", "Aisha Tran"],
-    isActive: true,
-    balance: 2278,
-    gender: "female"
-  },
-  {
-    name: "Carey Barr",
-    email: "careybarr@nurali.com",
-    eyeColor: "blue",
-    friends: ["Jordan Sampson", "Eddie Strong", "Adrian Cross"],
-    isActive: true,
-    balance: 3951,
-    gender: "male"
-  },
-  {
-    name: "Blackburn Dotson",
-    email: "blackburndotson@furnigeer.com",
-    eyeColor: "brown",
-    friends: ["Jacklyn Lucas", "Linda Chapman", "Adrian Cross", "Solomon Fokes"],
-    isActive: false,
-    balance: 1498,
-    gender: "male"
-  },
-  {
-    name: "Sheree Anthony",
-    email: "shereeanthony@kog.com",
-    eyeColor: "brown",
-    friends: ["Goldie Gentry", "Briana Decker"],
-    isActive: true,
-    balance: 2764,
-    gender: "female"
+// class Car {
+//   // Change code below this line
+//   static Roles = {
+//     MAX_PRICE: 50000,
+//   };
+
+//   #price;
+
+//   constructor({ price }) {
+//     this.#price = price;
+//   }
+
+//   get price() {
+//     return this.#price;
+//   }
+
+ 
+//   set price(newPrice) {
+//     if (newPrice <= Car.Roles.MAX_PRICE) {
+//       this.#price = newPrice;
+//     }
+//   }
+//   // Change code above this line
+// }
+
+// const audi = new Car({ price: 35000 });
+// console.log(audi.price); // 35000
+
+// audi.price = 49000;
+// console.log(audi.price); // 49000
+
+// audi.price = 51000;
+// console.log(audi.price); // 49000
+
+
+class User {
+  email;
+
+  constructor(email) {
+    this.email = email;
   }
-]);
+
+  get email() {
+    return this.email;
+  }
+
+  set email(newEmail) {
+    this.email = newEmail;
+  }
+}
+class Admin extends User {
+  // Change code below this line
+  static AccessLevel = {
+    BASIC: "basic",
+    SUPERUSER: "superuser",
+  };
+
+  blacklistedEmails = [];
+
+  constructor({ email, accessLevel }) {
+    super(email);
+    this.accessLevel = accessLevel;
+  }
+
+  blacklist(email) {
+    
+  }
+
+  isBlacklisted(email) {
+    
+  }
+
+
+
+  // Change code above this line
+}
+
+const mango = new Admin({
+  email: "mango@mail.com",
+  accessLevel: Admin.AccessLevel.SUPERUSER,
+});
+
+console.log(mango.email); // "mango@mail.com"
+console.log(mango.accessLevel); // "superuser"
+
+mango.blacklist("poly@mail.com");
+console.log(mango.blacklistedEmails); // ["poly@mail.com"]
+console.log(mango.isBlacklisted("mango@mail.com")); // false
+console.log(mango.isBlacklisted("poly@mail.com")); // true
+
+
