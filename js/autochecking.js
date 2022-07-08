@@ -361,20 +361,159 @@
 
 
 
-function changeEven(numbers, value) {
-  // Change code below this line
-  const newArray = [];
-  numbers.forEach(number => {
-    if (number % 2 === 0) {
-      newArray.push(number + value);
-    } else {
-      newArray.push(number);
-    }
-  });
+// function changeEven(numbers, value) {
+//   // Change code below this line
+//   const newArray = [];
+//   numbers.forEach(number => {
+//     if (number % 2 === 0) {
+//       newArray.push(number + value);
+//     } else {
+//       newArray.push(number);
+//     }
+//   });
   
-  console.log(newArray);
-  //  return newArray;
-  // Change code above this line
-};
+//   console.log(newArray);
+//   //  return newArray;
+//   // Change code above this line
+// };
 
-changeEven([1, 2, 3, 4, 5], 10);
+// changeEven([1, 2, 3, 4, 5], 10);
+
+
+// class Storage {
+//   constructor(items) {
+//     this.items = items;
+//   }
+  
+//   getItems() {
+//   return this.items;
+//   }
+  
+//   addItem(newItem) {
+//     this.items.push(newItem);
+//   }
+  
+//   removeItem(itemToRemove) {
+//     this.items.splice(this.items.findIndex(item => item === itemToRemove), 1);
+//   }
+// }
+//   // Change code above this line
+//   const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+//   console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+//   storage.addItem("Droid");
+//   console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+//   storage.removeItem("Prolonger");
+//   console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+
+
+
+
+// class StringBuilder {
+    
+//   constructor(value) {
+//       this.value = value;
+//   }
+
+//   getValue () {
+//       return this.value;
+//   }
+  
+  
+//   padStart(initialValue) {
+//     console.log(this.value.length);
+//     console.log(this.value.padStart(1, initialValue));
+//   }
+
+//   padEnd(initialValue) {
+//     console.log(this.value.padEnd(this.valuelength, initialValue));
+//     }
+
+//    padBoth(initialValue) {
+
+//   }
+// }
+// // Change code above this line
+// const builder = new StringBuilder(".");
+// console.log(builder.getValue()); // "."
+// builder.padStart("^");
+// console.log(builder.getValue()); // "^."
+// builder.padEnd("^");
+// console.log(builder.getValue()); // "^.^"
+// builder.padBoth("=");
+// console.log(builder.getValue()); // "=^.^="
+
+
+const getTotalBalanceByGender = (users, gender) => {users  
+  .map(user => user.gender)
+  .filter(user => user.gender === gender)
+  .reduce((total, user) => {
+    return total + user.balance;
+  }, 0)
+  console.log(this.balance);
+};
+  
+getTotalBalanceByGender ([
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male"
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female"
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male"
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female"
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong", "Adrian Cross"],
+    isActive: true,
+    balance: 3951,
+    gender: "male"
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman", "Adrian Cross", "Solomon Fokes"],
+    isActive: false,
+    balance: 1498,
+    gender: "male"
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female"
+  }
+]);
