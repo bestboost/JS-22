@@ -498,15 +498,16 @@ class Admin extends User {
     SUPERUSER: "superuser",
   };
 
-  blacklistedEmails = [];
+   blacklistedEmails = [];
 
   constructor({ email, accessLevel }) {
     super(email);
     this.accessLevel = accessLevel;
   }
 
-  blacklist(email) {
-    
+  thisblacklist(email) {
+    email = blacklistedEmails;
+  
   }
 
   isBlacklisted(email) {
