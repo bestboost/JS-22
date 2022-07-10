@@ -113,8 +113,108 @@
 // console.log(string);
 
 
-// Task 6
-// Напиши скрипт который заменяет регистр каждого символа в строке
-// на противопожный.
-const string = 'JavaScript';
-const letter = 
+// // Task 6
+// // Напиши скрипт который заменяет регистр каждого символа в строке
+// // на противопожный.
+// const string = 'JavaScript';
+// const letters = string.split('');
+// let invertedString = '';
+
+// console.log(letters);
+ 
+// for (const letter of letters) {
+//     console.log(letter);
+
+//     // if (letter === letter.toLowerCase()) {
+//     //     console.log("Это буква в нижнем регистре - ", letter);
+
+//     //     invertedString += letter.toUpperCase();
+
+//     // } else {
+//     //     console.log("Это буква в верхнем регистре!!! - ", letter)
+
+//     //     invertedString += letter.toLowerCase();
+//     // }
+
+//     invertedString +=
+//         letter === letter.toLowerCase()
+//             ? letter.toUpperCase()
+//             : letter.toLowerCase();
+// }
+
+// console.log('invertedString - ', invertedString);
+
+
+
+// // Task 7
+// // цепочки вызовов методов(chaining)
+// const title = 'Top 10 benefits of React framework';
+
+// const normalizedTotle = title.toLowerCase();
+// console.log(normalizedTotle);
+
+// const words = normalizedTotle.split(' ');
+// console.log(words);
+
+// const slug = words.join('-');
+// console.log(slug);
+
+// // const slug1 = title.toLowerCase().split(' ').join('-');
+// // console.log(slug1);
+
+
+
+// // Task 8
+// // Напиши скрипт который считает сумму
+// //  элементов двух массивов
+// const array1 = [5, 10, 15, 20];
+// const array2 = [10, 20, 30];
+// let total = 0;
+
+// const numbers = array1.concat(array2);
+// console.log(numbers);
+
+// for (const number of numbers) {
+//     total += number;
+// }
+
+// console.log('Total:', total);
+
+
+// // Task 9
+// // Работаем с колекцией карточек в Trello
+// //     - метод splice()
+// //     - удалить
+// //     - добавить
+// //     - обновить
+// const cards = [
+//     'Карточка - 1',
+//     'Карточка - 2',
+//     'Карточка - 3',
+//     'Карточка - 4',
+//     'Карточка - 5',
+// ]
+// console.log(cards);
+
+// // const cardToRemove = 'Карточка - 3';
+// // const index = cards.indexOf(cardToRemove);
+// // cards.splice(index, 1);
+
+// // console.log(index);
+// // console.log(cards);
+
+// // const cardToInsert = 'Карточка - 6';
+// // const index = 3;
+
+// // cards.splice(index, 0,cardToInsert);
+// // console.log(cards);
+
+// const cardToUpdate = 'Карточка - 4';
+// const index = cards.indexOf(cardToUpdate);
+// console.log(index);
+// cards.splice(index, 1, 'Update');
+// console.log(cards);
+
+
+
+
