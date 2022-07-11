@@ -81,3 +81,82 @@
 // console.log(findSmallestNumber([5, 6, 2, -8, 9]));
 // console.log(findSmallestNumber([56, 76, 82, 2, 9]));
 // console.log(findSmallestNumber([100, 66, 42, 4, 5]));
+
+
+
+// // Task 5
+// // Напиши функию changeCase(string) которая заменяет регистр каждого символа в строке
+// // на противопожный.
+// const changeCase = function (string) {
+//     const letters = string.split('');
+//     let invertedString = '';
+
+//     for (const letter of letters) {
+//         const isInLowerCase = letter === letter.toLowerCase();
+
+//         invertedString += isInLowerCase
+//                 ? letter.toUpperCase()
+//                 : letter.toLowerCase();
+//     }
+
+//     return invertedString;
+// };
+
+// console.log(changeCase('jhJHKHK'));
+// console.log(changeCase('MNVbbbn'));
+// console.log(changeCase('nbnNBNBnb'));
+
+
+
+// // Task 6
+// //  Напиши функцию slugify(string) которая
+// // получает строку и возвращает URL - slug
+// //  строка состоит только из букв и пробелов.
+// // цепочки вызовов методов(chaining)
+// // const title = 'Top 10 benefits of React framework';
+
+// // const normalizedTotle = title.toLowerCase();
+// // const words = normalizedTotle.split(' ');
+// // const slug = words.join('-');
+
+// // const slug1 = title.toLowerCase().split(' ').join('-');
+
+// // console.log(slug1);
+
+// const slugify = function (string) {
+//     // const normalizedString = string.toLowerCase();
+//     // const words = normalizedString.split(' ');
+//     // const slug = words.join('-');
+
+//     // return slug;
+
+//     return string.toLowerCase().split(' ').join('-');
+// };
+
+// console.log(slugify('Top 10 benefits of React framework'));
+// console.log(slugify('Azure static Web Apps are Awesome'));
+// console.log(slugify('Technical writing tips for non-native English speakers'));
+
+
+
+// Task 7
+const filterNumbers = function (array, ...args) {
+    console.log(array);
+    console.log(args);
+    const uniqueElements = [];
+
+    for (const element of array) {
+        if (args.includes(element)) {
+            uniqueElements.push(element);
+
+            console.log(`${element} есть!`);
+        }
+    }
+    
+ return uniqueElements;
+};
+
+console.log(filterNumbers([1, 2, 3, 4, 5], 10, 15, 2, 3, 8));
+console.log(filterNumbers([10, 15, 25, 30], 23, 30, 18, 15));
+console.log(filterNumbers([100, 200, 300, 400, 500], 7, 12, 200, 64));
+
