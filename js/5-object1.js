@@ -67,4 +67,58 @@ console.table(friends);
 // console.log(findFriendByName(friends, 'Chalsy'));
 
 
-// Получаем имена всех друзей
+// // Получаем имена всех друзей
+// const getAllNames = function (allFriends) {
+// const names = [];
+    
+//     for (const friend of allFriends) {
+//         console.log(friend.name);
+
+//         names.push(friend.name);
+//     }
+    
+//     return names;
+// };
+
+// console.log(getAllNames(friends));
+
+
+// // Получаем имена только друзей которые онлайн
+// const getOnlineFriends = function (allFriends) {
+//     const friendsOnline = [];
+
+//     for (const friend of allFriends) {
+//         console.log(friend);
+//         console.log(friend.online);
+
+//         if(friend.online) {
+//             friendsOnline.push(friend);
+//         }
+//     }
+
+//     return friendsOnline;
+// };
+
+// console.log(getOnlineFriends(friends));
+
+
+
+// Task 3
+// Работаем с колекцией товаров в корзине:
+// { name: '', price: 50 }
+// { name: '', price: 70 }
+// { name: '', price: 60 }
+// { name: '', price: 110 }
+
+const cart = {
+    items: [],
+    getItems() { },
+    add(product) { },
+    remove(productName) { },
+    clear() { },
+    countTotalPrice() { },
+    increaseQuantity(productName) { },
+    decreaseQuantity(productName) { },
+};
+
+// console.log(card.getItem());
