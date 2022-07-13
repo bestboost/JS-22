@@ -38,14 +38,14 @@
 
 // Task 2
 // Работа с коллекцией (массивом объектов)
-const friends = [
-    { name: 'Mango', online: false },
-    { name: 'Kiwi', online: true },
-    { name: 'Poly', online: true },
-    { name: 'Ajax', online: false },
-];
+// const friends = [
+//     { name: 'Mango', online: false },
+//     { name: 'Kiwi', online: true },
+//     { name: 'Poly', online: true },
+//     { name: 'Ajax', online: false },
+// ];
 
-console.table(friends);
+// console.table(friends);
 
 
 // // Ищем друга по имени
@@ -105,20 +105,78 @@ console.table(friends);
 
 // Task 3
 // Работаем с колекцией товаров в корзине:
-// { name: '', price: 50 }
-// { name: '', price: 70 }
-// { name: '', price: 60 }
-// { name: '', price: 110 }
+// { name: 'apple',      price: 50 }
+// { name: 'pine apple', price: 70 }
+// { name: 'tomato',     price: 60 }
+// { name: 'lemon',      price: 110 }
 
 const cart = {
     items: [],
-    getItems() { },
-    add(product) { },
-    remove(productName) { },
-    clear() { },
-    countTotalPrice() { },
+    getItems() {
+        return this.items;
+     },
+    add(product) {
+
+        for (const item of this.items) {
+            if (item.name === product.name) {
+                item.quantity += 1;
+                return;
+            }
+        }
+
+        const newProduct = {
+            ...product,
+            quantity: 1,
+        };
+
+        this.items.push(newProduct);
+     },
+    remove(productName) {
+        const { items } = this;
+        for (let i = 0; i < this.items.length; i += 1) {
+            const { name } = this.items[i];
+
+            if (productName === name) {
+                console.log(productName);
+                console.log(i);
+
+                items.splice(i, 1);
+            }
+        }
+     },
+    clear() {
+        this.items = [];
+     },
+    countTotalPrice() { 
+        const { items } = this;
+            let total = 0;
+        
+        for (const { price, quantity } of items) {
+            total += price * quantity;
+        }
+
+        return total;
+    },
     increaseQuantity(productName) { },
     decreaseQuantity(productName) { },
 };
 
-// console.log(card.getItem());
+console.log(cart.getItems());
+
+cart.add({ name: 'apple', price: 50 });
+cart.add({ name: 'apple', price: 50 });
+cart.add({ name: 'pine apple', price: 70 });
+cart.add({ name: 'tomato', price: 60 });
+cart.add({ name: 'lemon', price: 110 });
+cart.add({ name: 'lemon', price: 110 });
+cart.add({ name: 'lemon', price: 110 });
+
+console.table(cart.getItems());
+
+console.log('Total:', cart.countTotalPrice());
+
+cart.remove('tomato');
+console.table(cart.getItems());
+
+cart.clear();
+console.log(cart.getItems());
