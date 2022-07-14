@@ -104,29 +104,29 @@
 // console.log(rounder3(4.90978));
 
 
-// Task 4
-//  Зарплата
-const salaryManagerFactory = function (employeeName, baseSalary = 0) {
-    let salary = baseSalary;
+// // Task 4
+// //  Зарплата
+// const salaryManagerFactory = function (employeeName, baseSalary = 0) {
+//     let salary = baseSalary;
 
-    return {
-        raise(amount) {
-            if (amount > 1000) {
-                return `${employeeName} - Ты офигел?`
-            }
-            salary += amount;
-        },
-        lower(amount) {
-            salary -= amount;
-        },
-        current() {
-            return `Текущая зарплата ${employeeName} - ${salary}`;
-        },
-    };
-};
+//     return {
+//         raise(amount) {
+//             if (amount > 1000) {
+//                 return `${employeeName} - Ты офигел?`
+//             }
+//             salary += amount;
+//         },
+//         lower(amount) {
+//             salary -= amount;
+//         },
+//         current() {
+//             return `Текущая зарплата ${employeeName} - ${salary}`;
+//         },
+//     };
+// };
 
-const salaryManager = salaryManagerFactory('Игорь:', 800);
-console.log(salaryManagerFactory())
+// const salaryManager = salaryManagerFactory('Игорь:', 800);
+// console.log(salaryManagerFactory())
 // console.log(salaryManager.current());
 
 // console.log(salaryManager.raise(1100));
@@ -134,5 +134,41 @@ console.log(salaryManagerFactory())
 
 
 
+// // Task 5
+// // стрілочна функція
+// const filter = (array, test ) => {
+//     const filreredArray = [];
 
+//     for (const el of array) {
+//         console.log(el);
+//         const passed = test(el);
+
+//         if (passed) {
+//             filreredArray.push(el);
+//         }
+//     }
+
+//     return filreredArray;
+// };
+ 
+// // const callback1 = value => value >= 3;
+
+// const r1 = filter([1, 2, 3, 4, 5], value => value >= 3);
+// console.log(r1);
+
+// // const callback2 = value => value <= 4;
+
+// const r2 = filter([1, 2, 3, 4, 5, 6, 7, 8], value => value <= 4);
+// console.log(r2);
+
+// const fruits = [
+//     { name: 'apples', quantity: 200, isfresh: true },
+//     { name: 'grapes', quantity: 150, isfresh: false },
+//     { name: 'bananas', quantity: 100, isfresh: true },
+// ];
+
+// // const getFtuitsWithQuantity = fruit => fruit.quantity >= 150;
+
+// const r3 = filter(fruits, fruit => fruit.quantity >= 150);
+// console.log(r3);
 
