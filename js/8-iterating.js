@@ -150,24 +150,30 @@
 // console.log('anyHrdcorePlayers: ', anyHrdcorePlayers);
 
 
- // Array.prototype.reduce()
-const numbers = [5, 10, 15, 20, 25];
 
-const total = numbers.reduce((acc, number) => acc + number, 0);
-// console.log(total);
+ // Array.prototype.sort(callback(currentEl, nextEl){})
+const numbers = [1, 9, 6, 2, 3];
+numbers.sort();
+// console.log('numbers', numbers);
 
-// Считаем общую зарплату
-const salary = {
-    mango: 100,
-    poly: 50,
-    ajax: 150,
-};
+const letters = ['b', 'B', 'a', 'A'];
+letters.sort();
+// console.log('letters', letters);
 
-const totalSalary = Object.values(salary)
-    .reduce((total, value) => total + value, 0);
-// console.log(totalSalary);
+numbers.sort((curEl, nextEl) => {
+    return nextEl - curEl;
+});
+// console.log(numbers);
 
-// Считаем общее кол-во часов
+const descSortedNumbers = [...numbers].sort((a, b) => b - a);
+const ascSortedNumbers = [...numbers].sort((a, b) => a - b);
+// console.log('descSortedNumbers', descSortedNumbers);
+// console.log('ascSortedNumbers', ascSortedNumbers);
+
+// console.log([1, 2, 3, 4, 5].reverse());
+
+
+// Кастомная сортировка сложных типов
 const players = [
     { id: 'player - 1', name: 'Mango', timePlayed: 310, points: 54, online: false},
     { id: 'player - 2', name: 'Poly', timePlayed: 470, points: 92, online: true},
@@ -175,54 +181,11 @@ const players = [
     { id: 'player - 4', name: 'Ajax', timePlayed: 150, points: 71, online: false},
     { id: 'player - 5', name: 'Chelsy', timePlayed: 80, points: 48, online: true},
 ];
+ 
+// по игровому времени
+const sortedByBestPlayers = [...players].sort((prevPlayer, nextPlayer) => 
+    nextPlayer.timePlayed - prevPlayer.timePlayed,
+);
+// console.table(sortedByBestPlayers);
 
-const totalTimePlayed = players
-    .reduce((totalTime, player) => totalTime + player.timePlayed, 0);
-// console.log(totalTimePlayed); 
-
-
-// Считаем общую сумму товаров корзины
-const cart = [
-    { lable: 'Apples', price: 100, quantity: 2 },
-    { lable: 'Bananas', price: 120, quantity: 3 },
-    { lable: 'Lemons', price: 70, quantity: 4 },
-];
-
-const totalAmount = cart.reduce(
-    (total, { price, quantity }) =>
-        total + price * quantity, 0);
-// console.log(totalAmount);
-    
-
-// Собираем все теги из твитов
-const tweets = [
-    { id: '000', likes: 5, tags: ['js', 'nodejs'] },
-    { id: '001', likes: 2, tags: ['html', 'css'] },
-    { id: '002', likes: 17, tags: ['html', 'js', 'nodejs'] },
-    { id: '003', likes: 8, tags: ['css', 'react'] },
-    { id: '004', likes: 0, tags: ['js', 'nodejs', 'react'] },
-];
-const allTweetTags = tweets.reduce((acc, tweet) => 
- [...acc, ...tweet.tags], []);
-console.log(allTweetTags);
-
-// Ведем статистику тегов
-// const tagsStats = allTweetTags.reduce((acc, tag) => {
-//     console.log(acc);
-
-//     if (acc[tag]) {
-//         acc[tag] += 1;
-
-//         return acc;
-//     }
-//     acc[tag] = 1;
-
-//     return acc;
-// }, {});
-// console.log(tagsStats)
-
-const tagsStats = allTweetTags.reduce((acc, tag) => ({
-        ...acc,
-        [tag]: acc[tag]? acc[tag] + 1 : 1,
-    }), {});
-console.log(tagsStats);
+// по имени
