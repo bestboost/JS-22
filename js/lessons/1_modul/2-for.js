@@ -4,6 +4,7 @@
 // console.log('dfdvb');
 
 
+// 
 // const minSalary = 500;
 // const maxSalary = 5000;
 // const employees = 3;
@@ -18,17 +19,18 @@
 // console.log('totalSalary: ', totalSalary);
 
 
-const min = 5;
-const max = 13;
-let total = 0;
+// const min = 5;
+// const max = 13;
+// let total = 0;
 
-for (let i = min; i <= max; i += 1) {
+// for (let i = min; i <= max; i += 1) {
 
-    if (i % 2 !== 0) {
-        console.log('Не четное: ', i)
-        continue;
-    }
-    console.log('четное: ', i)
-    total += i;
-}
-console.log('total: ',total);
+//     if (i % 2 !== 0) {
+//         console.log('Не четное: ', i)
+//         continue;
+//     }
+//     console.log('четное: ', i)
+//     total += i;
+// }
+// console.log('total: ',total);
+
