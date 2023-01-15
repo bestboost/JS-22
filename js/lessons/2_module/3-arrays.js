@@ -1,3 +1,16 @@
+// const friends = ['Mango', 'Poly', 'Kiwi', 'Ajax']
+// console.table(friends);
+// const lastIndex = friends.length - 1
+
+// for (let i = 0; i<= lastIndex; i += 1) {
+//      friends[i] += ` - ${i}`
+// }
+// console.table(friends);
+
+// for (const friend of friends){
+//      console.log(friends[lastIndex])
+// }
+
 // payment
 
 // // task 1
@@ -7,7 +20,7 @@
 // let total = 0;
 
 // for (let i = 0; i < cart.length; i += 1) {
-//     // console.log(cart[i]);
+//     console.log(cart[i]);
 //     total += cart[i];
 // }
 
@@ -15,7 +28,6 @@
 //     total += value;
 // }
 // console.log('Total:', total)
-
 
 // // Добавить в каждую ячейку % налога
 // for (let i = 0; i < cart.length; i += 1) {
