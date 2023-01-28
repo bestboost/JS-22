@@ -110,73 +110,107 @@
 // { name: 'tomato',     price: 60 }
 // { name: 'lemon',      price: 110 }
 
-const cart = {
-    items: [],
-    getItems() {
-        return this.items;
-     },
-    add(product) {
+const products = [
+    { name: 'apple',      price: 50 },
+    { name: 'pine apple', price: 70 },
+    { name: 'tomato',     price: 60 },
+    { name: 'lemon',      price: 110 },
+]
 
-        for (const item of this.items) {
-            if (item.name === product.name) {
-                item.quantity += 1;
-                return;
-            }
-        }
-
-        const newProduct = {
-            ...product,
-            quantity: 1,
-        };
-
-        this.items.push(newProduct);
-     },
-    remove(productName) {
-        const { items } = this;
-        for (let i = 0; i < this.items.length; i += 1) {
-            const { name } = this.items[i];
-
-            if (productName === name) {
-                console.log(productName);
-                console.log(i);
-
-                items.splice(i, 1);
-            }
-        }
-     },
-    clear() {
-        this.items = [];
-     },
-    countTotalPrice() { 
-        const { items } = this;
-            let total = 0;
-        
-        for (const { price, quantity } of items) {
-            total += price * quantity;
-        }
-
-        return total;
+const card = {
+    items: [],  
+    getItems (){
+     return this.items;
     },
-    increaseQuantity(productName) { },
-    decreaseQuantity(productName) { },
-};
+    add(product){
+        this.items.push(product)
+    }, 
+    remove(prodactName){
+      
+        
+    }
+}
 
-console.log(cart.getItems());
+console.log('basket', card.getItems())
 
-cart.add({ name: 'apple', price: 50 });
-cart.add({ name: 'apple', price: 50 });
-cart.add({ name: 'pine apple', price: 70 });
-cart.add({ name: 'tomato', price: 60 });
-cart.add({ name: 'lemon', price: 110 });
-cart.add({ name: 'lemon', price: 110 });
-cart.add({ name: 'lemon', price: 110 });
+card.add({ name: 'apple', price: 50 })
+card.add({ name: 'pine apple', price: 70 })
+card.add({ name: 'tomato', price: 60 })
+card.add({ name: 'lemon', price: 110 })
 
-console.table(cart.getItems());
+console.table(card.getItems())
 
-console.log('Total:', cart.countTotalPrice());
+card.remove({ name: 'tomato', price: 60 })
+console.table(card.getItems())
 
-cart.remove('tomato');
-console.table(cart.getItems());
 
-cart.clear();
-console.log(cart.getItems());
+// const cart = {
+//     items: [],
+//     getItems() {
+//         return this.items;
+//      },
+//     add(product) {
+
+//         for (const item of this.items) {
+//             if (item.name === product.name) {
+//                 item.quantity += 1;
+//                 return;
+//             }
+//         }
+
+//         const newProduct = {
+//             ...product,
+//             quantity: 1,
+//         };
+
+//         this.items.push(newProduct);
+//      },
+//     remove(productName) {
+//         const { items } = this;
+//         for (let i = 0; i < this.items.length; i += 1) {
+//             const { name } = this.items[i];
+
+//             if (productName === name) {
+//                 console.log(productName);
+//                 console.log(i);
+
+//                 items.splice(i, 1);
+//             }
+//         }
+//      },
+//     clear() {
+//         this.items = [];
+//      },
+//     countTotalPrice() { 
+//         const { items } = this;
+//             let total = 0;
+        
+//         for (const { price, quantity } of items) {
+//             total += price * quantity;
+//         }
+
+//         return total;
+//     },
+//     increaseQuantity(productName) { },
+//     decreaseQuantity(productName) { },
+// };
+
+// console.log(cart.getItems());
+
+// cart.add({ name: 'apple', price: 50 });
+// cart.add({ name: 'apple', price: 50 });
+// cart.add({ name: 'pine apple', price: 70 });
+// cart.add({ name: 'tomato', price: 60 });
+// cart.add({ name: 'lemon', price: 110 });
+// cart.add({ name: 'lemon', price: 110 });
+// cart.add({ name: 'lemon', price: 110 });
+
+// console.table(cart.getItems());
+
+// console.log('Total:', cart.countTotalPrice());
+
+// cart.remove('tomato');
+// console.table(cart.getItems());
+
+// cart.clear();
+// console.log(cart.getItems());

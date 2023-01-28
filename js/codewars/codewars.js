@@ -18,15 +18,25 @@
 
 // grow([1, 2, 3, 4])
 
-function summa(num) {
-   // Code here
-  let sum = 0
-   for (let i = 1; i <= num; i +=1){
-    sum += i
+// function summa(num) {
+//    // Code here
+//   let sum = 0
+//    for (let i = 1; i <= num; i +=1){
+//     sum += i
    
     
    
-   }
-   console.log(sum)
- }
-summa(3)
+//    }
+//    console.log(sum)
+//  }
+// summa(3)
+
+// function hero(bullets, dragons){
+//   const deadDradon = dragons * 2
+//   let destinyHero = true;
+
+//  console.log(bullets >= deadDradon ? destinyHero : !destinyHero)
+// }
+
+// hero(10, 3)
+
