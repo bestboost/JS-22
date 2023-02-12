@@ -110,38 +110,38 @@
 // { name: 'tomato',     price: 60 }
 // { name: 'lemon',      price: 110 }
 
-const products = [
-    { name: 'apple',      price: 50 },
-    { name: 'pine apple', price: 70 },
-    { name: 'tomato',     price: 60 },
-    { name: 'lemon',      price: 110 },
-]
+// const products = [
+//     { name: 'apple',      price: 50 },
+//     { name: 'pine apple', price: 70 },
+//     { name: 'tomato',     price: 60 },
+//     { name: 'lemon',      price: 110 },
+// ]
 
-const card = {
-    items: [],  
-    getItems (){
-     return this.items;
-    },
-    add(product){
-        this.items.push(product)
-    }, 
-    remove(prodactName){
+// const card = {
+//     items: [],  
+//     getItems (){
+//      return this.items;
+//     },
+//     add(product){
+//         this.items.push(product)
+//     }, 
+//     remove(prodactName){
       
         
-    }
-}
+//     }
+// }
 
-console.log('basket', card.getItems())
+// console.log('basket', card.getItems())
 
-card.add({ name: 'apple', price: 50 })
-card.add({ name: 'pine apple', price: 70 })
-card.add({ name: 'tomato', price: 60 })
-card.add({ name: 'lemon', price: 110 })
+// card.add({ name: 'apple', price: 50 })
+// card.add({ name: 'pine apple', price: 70 })
+// card.add({ name: 'tomato', price: 60 })
+// card.add({ name: 'lemon', price: 110 })
 
-console.table(card.getItems())
+// console.table(card.getItems())
 
-card.remove({ name: 'tomato', price: 60 })
-console.table(card.getItems())
+// card.remove({ name: 'tomato', price: 60 })
+// console.table(card.getItems())
 
 
 // const cart = {
@@ -214,3 +214,4 @@ console.table(card.getItems())
 
 // cart.clear();
 // console.log(cart.getItems());
+
