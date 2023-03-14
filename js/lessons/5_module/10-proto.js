@@ -2,6 +2,8 @@
 //      z: 5,
 // };
 
+// const { readFileSync } = require("fs");
+
 // const objB = Object.create(objC);
 // // console.log(objB);
 // objB.y = 2;
@@ -72,16 +74,70 @@
 // console.log(myCar3);
 // myCar3.sayHi();
 
-const User = function ({email, password} = {}) {
-     this.email = email;
-     this.password = password;
+// const User = function ({email, password} = {}) {
+//      this.email = email;
+//      this.password = password;
+// };
+
+// User.prototype.changeEmail = function (newEmail) {
+//      this.email = newEmail;
+// }
+
+// const mango = new User({email: 'mango@mail.com', password: 1111});
+
+// mango.changeEmail('my-new-email@mail.com');
+// console.log(mango);
+
+
+const CounterPlugin = function ({rootSelector, initialValue = 0, step = 1} = {}) {
+  
+     this._value = initialValue;
+     this._step = step;
+
+     this._refs = this._getRefs(rootSelector);
+
+     this._bindEvents();
+     this.updateValueUI();
 };
 
-User.prototype.changeEmail = function (newEmail) {
-     this.email = newEmail;
+CounterPlugin.prototype._getRefs = function (rootSelector) {
+     
+     const refs = {};
+     refs.container = document.querySelector(rootSelector);
+     refs.incrementBtn = refs.container.querySelector('.js-increment');
+     refs.decrementBtn = refs.container.querySelector('.js-decrement');
+     refs.value = refs.container.querySelector('.js-value');
+    
+     return refs;
 }
 
-const mango = new User({email: 'mango@mail.com', password: 1111});
+CounterPlugin.prototype._bindEvents = function() {
+     this._refs.incrementBtn.addEventListener('click', () => {
+          this.increment();
+          this.updateValueUI();
+     });
 
-mango.changeEmail('my-new-email@mail.com');
-console.log(mango);
+     this._refs.decrementBtn.addEventListener('click', () => {
+          this.decrement();
+          this.updateValueUI();
+     });
+}
+
+CounterPlugin.prototype.updateValueUI = function (){
+     this._refs.value.textContent = this._value;
+} 
+
+CounterPlugin.prototype.increment = function () {
+     this._value += this._step;
+};
+
+CounterPlugin.prototype.decrement = function () {
+     this._value -= this._step;
+};
+
+ new CounterPlugin({rootSelector: '#counter1', step: 10});
+
+
+ new CounterPlugin({rootSelector: '#counter2', step: 2});
+
+ 

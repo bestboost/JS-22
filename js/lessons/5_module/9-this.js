@@ -170,11 +170,11 @@
 // const counter = {
 //   value: 0,
 //   increment() {
-//        console.log('increment -> this', this);
+//       //  console.log('increment -> this', this);
 //        this.value += 1;
 //   },
 //   discrement() {
-//        console.log('disrement -> this', this);
+//       //  console.log('disrement -> this', this);
 //        this.value -= 1;
 //   },
 // };
@@ -183,19 +183,19 @@
 // const incrementBtn = document.querySelector('.js-increment');
 // const valueEl = document.querySelector('.js-value');
 
-// console.log(decrementBtn);
-// console.log(incrementBtn);
-// console.log(valueEl);
+// // console.log(decrementBtn);
+// // console.log(incrementBtn);
+// // console.log(valueEl);
 
 // decrementBtn.addEventListener('click', function() {
 //   counter.discrement();
-//   console.log(counter);
+//   // console.log(counter);
 //   valueEl.textContent = counter.value;
 // });
 
 // incrementBtn.addEventListener('click', function() {
 //   counter.increment();
-//   console.log(counter);
+//   // console.log(counter);
 //   valueEl.textContent = counter.value;
 // });
 
