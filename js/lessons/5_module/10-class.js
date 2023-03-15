@@ -1,58 +1,146 @@
-class Car {
-     static description = 'Класс описывающий автомобиль';
+// class Car {
+//      static description = 'Класс описывающий автомобиль';
 
-     static logInfo(carObj) {
-        console.log('Car.logInfo -> carObj', carObj);
+//      static logInfo(carObj) {
+//         console.log('Car.logInfo -> carObj', carObj);
+//      }
+// #test = 'test';
+
+//    constructor({brand, model, price}= {}){
+//      this.brand = brand;
+//      this._model = model;
+//      this._price = price;
+
+//      // console.log('make constructor');
+//      // console.log("this",  this);
+
+//      // this.a = 5;
+//      // this.b = 10;
+// };
+
+// get price() {
+//      return this._price;
+// };
+
+// set price(newPrice) {
+//      this._price = newPrice;
+// }
+
+// get model() {
+//      return this._model;
+// }
+
+// set model(newModel) {
+//      this._model = newModel;
+//    }   
+// };
+
+// console.dir(Car);
+// console.log(Car.description);
+
+// const myCar = new Car({
+//           brand: 'Audi',
+//           model: 'Q3',
+//           price: 35000,
+//      }); 
+// console.log(myCar);
+
+// console.log(myCar.model);
+// myCar.model = 'Q4';
+// console.log(myCar.model);
+
+// console.log(myCar.price);
+// myCar.price = 'Q4';
+// console.log(myCar.price);
+
+// Car.logInfo(myCar);  
+// // console.log(myCar.#test) - приватное поле класса,
+// //  можно использовать в методах класса? нельзя получить доступ извне.  
+
+class Hero {
+     constructor({name = 'hero', xp = 0} = {}) {
+          this.name = name;
+          this.xp = xp;
+     };
+
+     gainXP(amount) {
+       console.log(`${this.name} получает ${amount} опыта`);
+       this.xp += amount;
+     };
+};
+
+// const mango = new Hero({
+//      name: 'Mango',
+//      xp: 1000,
+// })
+
+// console.log(mango)
+// mango.gainXP(1000);
+// console.log(mango);
+
+class Warrior extends Hero {
+     constructor({weapon, ...restProps}) {
+          super(restProps);
+
+          this.weapon = weapon;
+     };
+
+     attack () {
+          console.log(`${this.name} атакует используя ${this.weapon}`)
      }
-#test = 'test';
-
-   constructor({brand, model, price}= {}){
-     this.brand = brand;
-     this._model = model;
-     this._price = price;
-
-     // console.log('make constructor');
-     // console.log("this",  this);
-
-     // this.a = 5;
-     // this.b = 10;
 };
 
-get price() {
-     return this._price;
-};
+const mango = new Warrior({
+          name: 'Mango',
+          xp: 1000,
+          weapon: 'алебарда',
+     })
 
-set price(newPrice) {
-     this._price = newPrice;
-}
+class Berserk extends Warrior {
+     constructor ({warcry, ...restProps} = {}) {
+          super(restProps);
 
-get model() {
-     return this._model;
-}
+          this.warcry = warcry;
+     }
 
-set model(newModel) {
-     this._model = newModel;
-   }   
-};
+     babyRage() {
+          console.log(this.warcry);
+     }
+}   
 
-console.dir(Car);
-console.log(Car.description);
+const ajax = new Berserk ({
+     name: 'Ajax',
+     xp: 200,
+     weapon: 'axe',
+     warcry: 'Waaaaaah',
+})
+console.log("🚀 ~ file: 10-class.js:117 ~ ajax:", ajax)
 
-const myCar = new Car({
-          brand: 'Audi',
-          model: 'Q3',
-          price: 35000,
-     }); 
-console.log(myCar);
 
-console.log(myCar.model);
-myCar.model = 'Q4';
-console.log(myCar.model);
 
-console.log(myCar.price);
-myCar.price = 'Q4';
-console.log(myCar.price);
+class Mage extends Hero {
+     constructor({ spells, ...restProps}) {
+          super(restProps);
 
-Car.logInfo(myCar);  
-// console.log(myCar.#test) - приватное поле класса,
-//  можно использовать в методах класса? нельзя получить доступ извне.  
+          this.spells = spells;
+     };
+
+     cast() {
+          console.log(`${this.name} кастует`);
+     }
+}; 
+   
+const poly = new Mage({
+     name: 'Poly',
+     xp: 500,
+     spells: ['фаербол']
+});
+
+// console.log("🚀 ~ file: 10-class.js:92 ~ mango :", mango )
+// mango.gainXP(1000);
+// mango.attack();
+// mango.gainXP(1000);
+
+// console.log("🚀 ~ file: 10-class.js:118 ~ poly:", poly)
+// poly.cast();
+// poly.gainXP(200)
