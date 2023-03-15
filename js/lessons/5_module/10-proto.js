@@ -89,55 +89,55 @@
 // console.log(mango);
 
 
-const CounterPlugin = function ({rootSelector, initialValue = 0, step = 1} = {}) {
+// const CounterPlugin = function ({rootSelector, initialValue = 0, step = 1} = {}) {
   
-     this._value = initialValue;
-     this._step = step;
+//      this._value = initialValue;
+//      this._step = step;
 
-     this._refs = this._getRefs(rootSelector);
+//      this._refs = this._getRefs(rootSelector);
 
-     this._bindEvents();
-     this.updateValueUI();
-};
+//      this._bindEvents();
+//      this.updateValueUI();
+// };
 
-CounterPlugin.prototype._getRefs = function (rootSelector) {
+// CounterPlugin.prototype._getRefs = function (rootSelector) {
      
-     const refs = {};
-     refs.container = document.querySelector(rootSelector);
-     refs.incrementBtn = refs.container.querySelector('.js-increment');
-     refs.decrementBtn = refs.container.querySelector('.js-decrement');
-     refs.value = refs.container.querySelector('.js-value');
+//      const refs = {};
+//      refs.container = document.querySelector(rootSelector);
+//      refs.incrementBtn = refs.container.querySelector('.js-increment');
+//      refs.decrementBtn = refs.container.querySelector('.js-decrement');
+//      refs.value = refs.container.querySelector('.js-value');
     
-     return refs;
-}
+//      return refs;
+// }
 
-CounterPlugin.prototype._bindEvents = function() {
-     this._refs.incrementBtn.addEventListener('click', () => {
-          this.increment();
-          this.updateValueUI();
-     });
+// CounterPlugin.prototype._bindEvents = function() {
+//      this._refs.incrementBtn.addEventListener('click', () => {
+//           this.increment();
+//           this.updateValueUI();
+//      });
 
-     this._refs.decrementBtn.addEventListener('click', () => {
-          this.decrement();
-          this.updateValueUI();
-     });
-}
+//      this._refs.decrementBtn.addEventListener('click', () => {
+//           this.decrement();
+//           this.updateValueUI();
+//      });
+// }
 
-CounterPlugin.prototype.updateValueUI = function (){
-     this._refs.value.textContent = this._value;
-} 
+// CounterPlugin.prototype.updateValueUI = function (){
+//      this._refs.value.textContent = this._value;
+// } 
 
-CounterPlugin.prototype.increment = function () {
-     this._value += this._step;
-};
+// CounterPlugin.prototype.increment = function () {
+//      this._value += this._step;
+// };
 
-CounterPlugin.prototype.decrement = function () {
-     this._value -= this._step;
-};
+// CounterPlugin.prototype.decrement = function () {
+//      this._value -= this._step;
+// };
 
- new CounterPlugin({rootSelector: '#counter1', step: 10});
+//  new CounterPlugin({rootSelector: '#counter1', step: 10});
 
 
- new CounterPlugin({rootSelector: '#counter2', step: 2});
+//  new CounterPlugin({rootSelector: '#counter2', step: 2});
 
  
