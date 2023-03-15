@@ -8,8 +8,8 @@ class Car {
 
    constructor({brand, model, price}= {}){
      this.brand = brand;
-     this.model = model;
-     this.price = price;
+     this._model = model;
+     this._price = price;
 
      // console.log('make constructor');
      // console.log("this",  this);
@@ -18,12 +18,20 @@ class Car {
      // this.b = 10;
 };
 
-changePrice (newPrice) {
-     this.price = newPrice;
-   }
+get price() {
+     return this._price;
+};
 
-updateModel(newModel) {
-     this.model = newModel;
+set price(newPrice) {
+     this._price = newPrice;
+}
+
+get model() {
+     return this._model;
+}
+
+set model(newModel) {
+     this._model = newModel;
    }   
 };
 
@@ -36,6 +44,14 @@ const myCar = new Car({
           price: 35000,
      }); 
 console.log(myCar);
+
+console.log(myCar.model);
+myCar.model = 'Q4';
+console.log(myCar.model);
+
+console.log(myCar.price);
+myCar.price = 'Q4';
+console.log(myCar.price);
 
 Car.logInfo(myCar);  
 // console.log(myCar.#test) - приватное поле класса,
