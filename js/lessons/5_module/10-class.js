@@ -180,7 +180,7 @@ class User {
      
      isBlacklisted(email) {
          
-       this.blacklistedEmails.find(email => email);
+       this.blacklistedEmails.includes(email);
      }
    
      // Change code above this line
