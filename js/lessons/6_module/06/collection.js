@@ -14,18 +14,31 @@ const colorPickerOptions = [
 
 const colorPickerContainerEl = document.querySelector('.js-color-picker');
 
-const elements = colorPickerOptions.map(option =>{
-   const buttonEl = document.createElement('button');
-   buttonEl.type = 'button';
-   buttonEl.classList.add('color-picker__option');
-   buttonEl.textContent = option.label; 
-   buttonEl.style.backgroundColor = option.color;
+// const elements = colorPickerOptions.map(option => {
+//    const buttonEl = document.createElement('button');
+//    buttonEl.type = 'button';
+//    buttonEl.classList.add('color-picker__option');
+//    buttonEl.textContent = option.label; 
+//    buttonEl.style.backgroundColor = option.color;
 
-   return buttonEl;
-});
+//    return buttonEl;
+// });
 
-console.log("🚀 ~ file: collection.js:24 ~ element ~ element:", elements)
+// console.log("🚀 ~ file: collection.js:24 ~ element ~ element:", elements)
 
-colorPickerContainerEl.append(...elements);
+// colorPickerContainerEl.append(...elements);
+
+const makeColorPickerOptions = options => {
+   return options.map(option => {
+      const buttonEl = document.createElement('button');
+      buttonEl.type = 'button';
+      buttonEl.classList.add('color-picker__option');
+      buttonEl.textContent = option.label; 
+      buttonEl.style.backgroundColor = option.color;
    
+      return buttonEl;
+   });
+};
    
+  const elements = makeColorPickerOptions(colorPickerOptions);
+  colorPickerContainerEl.append(...elements); 
