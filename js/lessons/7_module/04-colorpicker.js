@@ -19,6 +19,7 @@ const colors = [
 
    poletteContainer.insertAdjacentHTML('beforeend', cardsMarkup)
 
+   poletteContainer.addEventListener('click', onPoletteContainerClick);
 
 function createColorCardsMarkup (colors) {
      return colors.map(({hex, rgb}) => {
@@ -37,4 +38,35 @@ function createColorCardsMarkup (colors) {
       </div> 
       `;
      }).join('');     
-}
+};
+
+function onPoletteContainerClick (e) {
+   const isColorSwatchEl = e.target.classList.contains('color-swatch');
+
+   if(!isColorSwatchEl) {
+      return;
+   };
+
+   const swatchEl = e.target;
+   const parentColorCard = swatchEl.closest('.color-card');
+
+   removeClassFromColorCard ();
+   addClassFromColorCard (parentColorCard);
+   setBodyBgColor(swatchEl.dataset.hex);
+};
+
+function removeClassFromColorCard () {
+   const currentActiveCard = document.querySelector('.color-card.is-active');
+
+   if(currentActiveCard) {
+      currentActiveCard.classList.remove('is-active');
+   };
+};
+
+function addClassFromColorCard (card) {
+   card.classList.add('is-active');
+};
+
+function setBodyBgColor(color) {
+   document.body.style.backgroundColor = color;
+};
