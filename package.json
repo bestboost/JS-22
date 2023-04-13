@@ -4,14 +4,15 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "node server.js",
     "prestart": "echo \"Before Start\"",
     "poststart": "echo \"After Start\"",
     "script-1": "echo \"script-1\"",
     "script-2": "echo \"script-2\"",
-    "all": "npm run script-1 && npm run script-2",
-    "build": "babel src -d dist"
+    "all": "npm run script-1 && npm run script-2"
   },
   "repository": {
     "type": "git",
@@ -28,8 +29,6 @@
     "joi": "^17.9.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.21.0",
-    "@babel/core": "^7.21.4",
-    "@babel/preset-env": "^7.21.4"
+    "parcel": "^2.8.3"
   }
 }
