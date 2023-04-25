@@ -1,8 +1,10 @@
-// import throttle from 'lodash.throttle';
+import throttle from 'lodash.throttle';
 import '../css/common.css';
 import '../css/feedback-form.css';
 
-const STORAGE_KEY = 'feedback-msg';
+const STORAGE_KEY = 'feedback-data';
+
+const formData = {};
 
 const refs = {
   form: document.querySelector('.js-feedback-form'),
@@ -10,55 +12,49 @@ const refs = {
 };
 
 refs.form.addEventListener('submit', onFormSubmit);
-refs.textarea.addEventListener('input', onTextareaInput);
+// refs.textarea.addEventListener('input', throttle(onTextareaInput, 300));
 
-populateTextarea();
+refs.form.addEventListener('input', throttle(onFormInput, 300));
 
-/*
- * - Останавливаем поведение по умолчанию
- * - Убираем сообщение из хранилища
- * - Очищаем форму
- */
+// populateTextarea();
+populateForm();
+
 function onFormSubmit(evt) {
   evt.preventDefault();
   console.log('Send form');
 
   evt.currentTarget.reset();
-  localStorage.removeItem('feedback-msg');
+  localStorage.removeItem(STORAGE_KEY);
 }
 
-/*
- * - Получаем значение поля
- * - Сохраняем его в хранилище
- * - Можно добавить throttle
- */
-function onTextareaInput(evt) {
-  const message = evt.currentTarget.value;
-  localStorage.setItem('feedback-msg', message);
+function onFormInput(evt){
+  // console.log(e.target.name)
+  // console.log(e.target.value)
+  formData[evt.target.name] = evt.target.value;
+  // console.log("formData:", formData)
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 }
 
-/*
- * - Получаем значение из хранилища
- * - Если там что-то было, обновляем DOM
- */
-function populateTextarea() {
-  const savedMessage = localStorage.getItem('feedback-msg');
+// function onTextareaInput(evt) { 
+//   const message = evt.target.value;
   
-  if (savedMessage){  
-     refs.textarea.value = savedMessage;
+//   localStorage.setItem(STORAGE_KEY, message);
+// }
+
+// function populateTextarea() {
+//   const savedMessage = 
+//   localStorage.getItem(STORAGE_KEY);
+  
+//   if (savedMessage){  
+//      refs.textarea.value = savedMessage;
+//   };
+// };
+
+function populateForm() {
+  const savedData = localStorage.getItem(STORAGE_KEY);
+  const parsed = JSON.parse(savedData);
+
+  if (parsed){  
+     refs.form.value = parsed;
   };
 };
-
-// Домой
-// сделать так чтобы сохраняло не только сообщение но и имя, и все в одном обьекте
-
-// const formData = {};
-
-// refs.form.addEventListener('input', e => {
-//   // console.log(e.target.name);
-//   // console.log(e.target.value);
-
-//   formData[e.target.name] = e.target.value;
-
-//   console.log(formData);
-// });
