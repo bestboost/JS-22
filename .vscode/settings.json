@@ -3,5 +3,6 @@
      "turboConsoleLog.insertEnclosingClass": false,
      "turboConsoleLog.insertEnclosingFunction": false,
      "turboConsoleLog.logMessagePrefix": "",
-     "turboConsoleLog.delimiterInsideMessage": ""
+     "turboConsoleLog.delimiterInsideMessage": "",
+     "git.ignoreLimitWarning": true
 }
